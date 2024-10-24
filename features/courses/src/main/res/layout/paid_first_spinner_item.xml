@@ -21,15 +21,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="@string/courses"
+                android:fontFamily="@font/inter_bold"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_very_large" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fails"
-                android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_size_very_large" />
+                android:textSize="@dimen/text_size_medium" />
 
         </LinearLayout>
 
@@ -45,7 +39,7 @@
                 android:layout_marginEnd="14dp"
                 android:text="@string/lectures"
                 android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_size_title" />
+                android:textSize="@dimen/text_size_pre_medium" />
 
             <TextView
                 android:id="@+id/tv_spinner_fails"
@@ -54,7 +48,7 @@
                 android:layout_marginEnd="14dp"
                 android:text="@string/count_files"
                 android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_size_title" />
+                android:textSize="@dimen/text_size_pre_medium" />
 
             <TextView
                 android:id="@+id/tv_spinner_test"
@@ -62,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tests"
                 android:textColor="@color/dark_grey"
-                android:textSize="@dimen/text_size_title" />
+                android:textSize="@dimen/text_size_pre_medium" />
 
         </LinearLayout>
 

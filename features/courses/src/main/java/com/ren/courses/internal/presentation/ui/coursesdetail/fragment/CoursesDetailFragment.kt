@@ -79,13 +79,22 @@ class CoursesDetailFragment :
                         tvRating.rating = it
                     }
                     model.reviews?.map { reviews ->
-                        Glide.with(imUser.context).load(reviews.user?.avatar).into(imUser)
-                        tvUserName.text = reviews.user?.username
-                        tvTitleReviews.text = reviews.comment
-                        reviews.rating?.let {
-                            tvGrade.rating = it.toFloat()
+                        if (reviews == null){
+                        }else{
+                            tvNull.visibility = View.GONE
+                            imUser.visibility = View.VISIBLE
+                            tvUserName.visibility = View.VISIBLE
+                            tvCreadAt.visibility = View.VISIBLE
+                            tvTitleReviews.visibility = View.VISIBLE
+                            tvGrade.visibility = View.VISIBLE
+                            Glide.with(imUser.context).load(reviews.user?.avatar).into(imUser)
+                            tvUserName.text = reviews.user?.username
+                            tvTitleReviews.text = reviews.comment
+                            reviews.rating?.let {
+                                tvGrade.rating = it.toFloat()
+                            }
+                            tvCreadAt.text = reviews.createdAt
                         }
-                        tvCreadAt.text = reviews.createdAt
                     }
                     model.author?.let { author ->
                         Glide.with(imAdmin.context).load(author.avatar).load(imAdmin)
@@ -106,6 +115,7 @@ class CoursesDetailFragment :
                             } else {
                                 includeItem.tvSpinnerLectures.text =
                                     getString(R.string.lectures, model.lectureCount)
+
                                 includeItem.root.visibility = View.VISIBLE
                                 includePaidItem.root.visibility = View.GONE
                                 adapter.items = lectues

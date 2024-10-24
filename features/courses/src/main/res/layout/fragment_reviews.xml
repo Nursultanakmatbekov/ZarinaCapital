@@ -53,11 +53,9 @@
                 android:layout_marginHorizontal="@dimen/margin_20"
                 android:layout_marginTop="@dimen/margin_20"
                 android:layout_marginBottom="@dimen/margin_20"
-                android:background="@drawable/rounder_button_red"
-                android:fontFamily="@font/inter_bold"
                 android:text="@string/write_review"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_medium" />
 
         </LinearLayout>

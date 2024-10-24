@@ -2,10 +2,10 @@ package com.ren.menu.internal.presentation.ui.profile
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.text.Editable
-import android.text.TextWatcher
+import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -13,7 +13,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.google.android.material.textfield.TextInputLayout
 import com.ren.menu.R
 import com.ren.menu.databinding.FragmentEditProfileBinding
 import com.ren.menu.internal.domain.entities.profile.PUTProfile
@@ -25,6 +24,7 @@ import com.ren.presentation.utils.NUMBER_KEY
 import com.ren.presentation.utils.USERNAME_KEY
 import com.ren.presentation.utils.isErrorEnable
 import dagger.hilt.android.AndroidEntryPoint
+import java.io.InputStream
 
 @AndroidEntryPoint
 internal class EditProfileFragment :
@@ -58,6 +58,7 @@ internal class EditProfileFragment :
             val prefix = binding.tilPhone.prefixText.toString().trim()
             val phone = binding.etNumber.text.toString().trim()
             val email = binding.etEmail.text.toString().trim()
+            val avatarBase64 = selectedImageUri?.let { uriToBase64(Uri.parse(it)) }
 
             viewModel.updateProfile(
                 data = PUTProfile(
@@ -65,7 +66,7 @@ internal class EditProfileFragment :
                     prefix = prefix,
                     phone = phone.ifEmpty { profile.phone },
                     email = email.ifEmpty { profile.email },
-                    avatar = selectedImageUri
+                    avatar = avatarBase64
                 )
             )
         }
@@ -87,6 +88,20 @@ internal class EditProfileFragment :
             binding.imProfile.setImageURI(imageUri)
         }
     }
+
+    private fun uriToBase64(uri: Uri): String? {
+        return try {
+            val inputStream: InputStream? = requireContext().contentResolver.openInputStream(uri)
+            val bytes = inputStream?.readBytes()
+            inputStream?.close()
+            bytes?.let { Base64.encodeToString(it, Base64.NO_WRAP) }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+
 
     private fun subscribeToProfile() = with(binding) {
         val fields = mutableMapOf(

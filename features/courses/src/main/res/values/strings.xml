@@ -1,11 +1,11 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="lectures">%1d lectures</string>
-    <string name="buy_the_course_to_watch">Buy the course to watch</string>
+    <string name="lectures">%1d лекции</string>
+    <string name="buy_the_course_to_watch">Купите курс чтобы смотреть</string>
     <string name="fails">Файлы</string>
     <string name="progress">%1d из %2d</string>
     <string name="percent">%1d%</string>
-    <string name="count_files">"%1d files "</string>
-    <string name="tests">%1d tests</string>
+    <string name="count_files">"%1d файла "</string>
+    <string name="tests">%1d тест</string>
 </resources>

@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:text="@string/courses"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_very_large" />
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_medium" />
 
         <TextView
             android:id="@+id/tv_spinner_lectures"
@@ -26,7 +27,7 @@
             android:layout_marginTop="14dp"
             android:text="@string/lectures"
             android:textColor="@color/dark_grey"
-            android:textSize="@dimen/text_size_title" />
+            android:textSize="@dimen/text_size_pre_medium" />
 
         <TextView
             android:id="@+id/tv_spinner_title_course_list"
@@ -37,7 +38,7 @@
             android:drawablePadding="4dp"
             android:text="@string/buy_the_course_to_watch"
             android:textColor="@color/dark_grey"
-            android:textSize="@dimen/text_size_title" />
+            android:textSize="@dimen/text_size_pre_medium" />
     </LinearLayout>
 
     <ImageView

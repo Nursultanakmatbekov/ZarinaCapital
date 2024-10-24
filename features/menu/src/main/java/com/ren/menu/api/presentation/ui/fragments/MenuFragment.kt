@@ -58,8 +58,7 @@ MenuFragment : BaseFragment<FragmentMenuBinding, MenuViewModel>(R.layout.fragmen
 
     private fun loadProfileData(profile: Profile) {
         Glide.with(binding.imProfile)
-            .load("file:///storage/emulated/0/Android/data/com.ren.zarinacapital/files/DCIM/IMG_20240629_165908437.jpg")
-            .fallback(R.drawable.ic_launcher_background)
+            .load(profile.avatar)
             .into(binding.imProfile)
 
         binding.tvName.text = profile.username

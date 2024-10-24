@@ -30,18 +30,7 @@
                 android:textSize="@dimen/text_size_medium"
                 tools:text="Форекс курсы" />
 
-            <RatingBar
-                android:id="@+id/tv_rating"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin_5"
-                android:layout_marginEnd="@dimen/margin_20"
-                android:numStars="5"
-                android:progressTint="@color/yellow"
-                android:rating="3"
-                android:secondaryProgressTint="@color/yellow" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -68,6 +57,22 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/text_size_small" />
 
+            <Space
+                android:layout_width="100dp"
+                android:layout_height="0dp"/>
+
+            <RatingBar
+                android:id="@+id/tv_rating"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginEnd="@dimen/margin_20"
+                android:numStars="5"
+                android:progressTint="@color/yellow"
+                android:rating="3"
+                android:secondaryProgressTint="@color/yellow" />
+
         </LinearLayout>
 
         <View
@@ -82,8 +87,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_15"
             android:fontFamily="@font/inter_bold"
-            android:text="@string/program_courses"
             android:textColor="@color/black"
+            android:text="@string/program_courses"
             android:textSize="@dimen/text_size_medium" />
 
         <include
@@ -184,6 +189,7 @@
                 android:id="@+id/im_user"
                 android:layout_width="@dimen/dp50"
                 android:layout_height="@dimen/dp50"
+                android:visibility="gone"
                 android:layout_margin="@dimen/margin_10"
                 android:theme="@style/ShapeAppearance.Material3.Corner.Full"
                 app:layout_constraintStart_toStartOf="parent"
@@ -193,6 +199,7 @@
                 android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:layout_marginStart="@dimen/margin_10"
                 android:fontFamily="@font/inter_regular"
                 android:textColor="@color/black"
@@ -204,6 +211,7 @@
 
             <TextView
                 android:id="@+id/tv_cread_at"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_20"
@@ -222,6 +230,7 @@
                 android:fontFamily="@font/inter_regular"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_size_pre_medium"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@+id/tv_cread_at"
                 app:layout_constraintStart_toStartOf="@+id/tv_user_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
@@ -233,19 +242,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5"
+                android:visibility ="gone"
                 android:layout_marginEnd="@dimen/margin_20"
                 android:numStars="5"
+                android:layout_marginBottom="@dimen/margin_10"
                 android:progressTint="@color/yellow"
                 android:rating="3"
+                app:layout_constraintBottom_toBottomOf="parent"
                 android:secondaryProgressTint="@color/yellow"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_title_reviews" />
 
             <TextView
+                android:id="@+id/tv_null"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:text="Пока нет коментариев"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/margin_15"
                 android:layout_marginTop="@dimen/margin_15"
-                app:layout_constraintTop_toTopOf="@+id/tv_grade" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

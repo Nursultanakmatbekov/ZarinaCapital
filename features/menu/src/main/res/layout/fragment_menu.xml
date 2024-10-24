@@ -23,6 +23,7 @@
                 android:layout_width="@dimen/avatar_size"
                 android:layout_height="@dimen/avatar_size"
                 android:layout_margin="@dimen/margin_15"
+                android:src="@color/grey_8"
                 android:theme="@style/ShapeAppearance.Material3.Corner.Full" />
 
             <LinearLayout
